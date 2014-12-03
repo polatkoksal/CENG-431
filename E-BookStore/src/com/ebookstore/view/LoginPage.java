@@ -17,25 +17,6 @@ public class LoginPage extends JFrame {
 	private JPanel contentPane;
 	private AdminLoginPage adminLogin;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					LoginPage frame = new LoginPage();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public LoginPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 540, 356);
@@ -43,23 +24,23 @@ public class LoginPage extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JLabel lblLognPage = new JLabel("LOGIN PAGE");
 		lblLognPage.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblLognPage.setBounds(179, 47, 121, 14);
 		contentPane.add(lblLognPage);
-		
+
 		JButton btnAdmin = new JButton("Admin");
 		btnAdmin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				adminLogin= new AdminLoginPage();
+				adminLogin = new AdminLoginPage();
 				adminLogin.setVisible(true);
 				setVisible(false);
 			}
 		});
 		btnAdmin.setBounds(179, 150, 89, 23);
 		contentPane.add(btnAdmin);
-		
+
 		JButton btnCustomer = new JButton("Customer");
 		btnCustomer.setBounds(179, 207, 89, 23);
 		contentPane.add(btnCustomer);

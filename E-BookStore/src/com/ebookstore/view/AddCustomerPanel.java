@@ -20,25 +20,7 @@ public class AddCustomerPanel extends JFrame {
 	private JTextField textUsrSurname;
     private AdminMenuPanel adminMenu;
     private JTextField textUsrCredit;
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AddCustomerPanel frame = new AddCustomerPanel();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
+	
 	public AddCustomerPanel() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);

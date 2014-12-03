@@ -85,6 +85,17 @@ public class Controller {
 				}
 			}
 		}
-
 	}
+
+	public ArrayList<String> getStatus() {
+		OrderStatus[] orders = OrderStatus.values();
+		ArrayList<String> states = new ArrayList<String>();
+
+		for (int i = 0; i < orders.length; i++) {
+			states.add(orders[i].name());
+		}
+
+		return states;
+	}
+
 }
