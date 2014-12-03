@@ -20,25 +20,6 @@ public class AdminLoginPage extends JFrame {
 	private JTextField textAdminSurname;
 	private AdminMenuPanel adminMenuPanel;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AdminLoginPage frame = new AdminLoginPage();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public AdminLoginPage() {
 		setTitle("Admin Login Page\r\n");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
