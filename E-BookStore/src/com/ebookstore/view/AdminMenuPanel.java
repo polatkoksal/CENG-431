@@ -18,6 +18,7 @@ public class AdminMenuPanel extends JFrame {
 	private AddCustomerPanel addCustomer;
 	private AddTitlePanel addTitle;
 	private UpdateOrRemoveCustomer updOrRemove;
+	private UpdateOrRemoveTitle updOrRemoveTitle;
 
 	/**
 	 * Launch the application.
@@ -73,7 +74,7 @@ public class AdminMenuPanel extends JFrame {
 				
 			}
 		});
-		btnNewButton.setBounds(165, 144, 216, 30);
+		btnNewButton.setBounds(165, 175, 216, 30);
 		contentPane.add(btnNewButton);
 		
 		JButton btnAddTitle = new JButton("Add Title");
@@ -84,12 +85,22 @@ public class AdminMenuPanel extends JFrame {
 				setVisible(false);
 			}
 		});
-		btnAddTitle.setBounds(165, 201, 216, 30);
+		btnAddTitle.setBounds(165, 216, 216, 30);
 		contentPane.add(btnAddTitle);
 		
 		JButton btnNewButton_2 = new JButton("Update / Remove Title");
-		btnNewButton_2.setBounds(165, 260, 216, 30);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+			}
+		});
+		btnNewButton_2.setBounds(165, 257, 216, 30);
 		contentPane.add(btnNewButton_2);
+		
+		JButton btnNewButton_1 = new JButton("Manage Order Item\r\n");
+		btnNewButton_1.setBounds(165, 130, 216, 34);
+		contentPane.add(btnNewButton_1);
 	}
 
 }
