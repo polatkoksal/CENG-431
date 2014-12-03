@@ -27,25 +27,6 @@ public class UpdateOrRemoveCustomer extends JFrame {
 	private JTextField textCredit;
 	private AdminMenuPanel admMenu;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					UpdateOrRemoveCustomer frame = new UpdateOrRemoveCustomer();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
 	public UpdateOrRemoveCustomer() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 524, 411);
@@ -116,19 +97,17 @@ public class UpdateOrRemoveCustomer extends JFrame {
 		btnRemove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				int dialogButton = JOptionPane.YES_NO_OPTION;
-				int result = JOptionPane.showConfirmDialog(null, "Are you sure?", "Warning",
-						dialogButton);
+				int result = JOptionPane.showConfirmDialog(null,
+						"Are you sure?", "Warning", dialogButton);
 
-				if (result == JOptionPane.YES_OPTION) { 
+				if (result == JOptionPane.YES_OPTION) {
 					admMenu = new AdminMenuPanel();
 					admMenu.setVisible(true);
 					setVisible(false);
-					
-				} else if(result == JOptionPane.NO_OPTION){
-					
-					
-				}
 
+				} else if (result == JOptionPane.NO_OPTION) {
+
+				}
 
 			}
 		});
