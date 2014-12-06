@@ -1,33 +1,31 @@
 package com.ebookstore.view;
 
-import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 
 import javax.swing.JButton;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-public class UpdateOrRemoveCustomer extends JFrame {
+public class UpdateRemoveCustomer extends JFrame {
 
+	private static final long serialVersionUID = -6180979058074168352L;
 	private JPanel contentPane;
 	private JTextField textName;
 	private JTextField textSurName;
 	private JTextField textCredit;
-	private AdminMenuPanel admMenu;
+	private JButton btnUpdate;
+	private JButton btnRemove;
+	private JList jlist;
+	private JButton back;
 
-	public UpdateOrRemoveCustomer() {
+	public UpdateRemoveCustomer() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 524, 411);
 		contentPane = new JPanel();
@@ -35,16 +33,8 @@ public class UpdateOrRemoveCustomer extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JList jlist = new JList();
+		jlist = new JList();
 		jlist.setBounds(10, 84, 205, 283);
-		jlist.addListSelectionListener(new ListSelectionListener() {
-
-			@Override
-			public void valueChanged(ListSelectionEvent arg0) {
-
-			}
-		});
-
 		contentPane.add(jlist);
 
 		JLabel lblUpdateRemove = new JLabel("Update / Remove Customer Panel");
@@ -82,36 +72,66 @@ public class UpdateOrRemoveCustomer extends JFrame {
 		contentPane.add(textCredit);
 		textCredit.setColumns(10);
 
-		JButton btnUpdate = new JButton("Update");
-		btnUpdate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				admMenu = new AdminMenuPanel();
-				admMenu.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnUpdate.setBounds(298, 319, 89, 23);
+		btnUpdate = new JButton("Update");
+		btnUpdate.setBounds(308, 280, 89, 23);
 		contentPane.add(btnUpdate);
 
-		JButton btnRemove = new JButton("Remove");
-		btnRemove.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int dialogButton = JOptionPane.YES_NO_OPTION;
-				int result = JOptionPane.showConfirmDialog(null,
-						"Are you sure?", "Warning", dialogButton);
-
-				if (result == JOptionPane.YES_OPTION) {
-					admMenu = new AdminMenuPanel();
-					admMenu.setVisible(true);
-					setVisible(false);
-
-				} else if (result == JOptionPane.NO_OPTION) {
-
-				}
-
-			}
-		});
-		btnRemove.setBounds(409, 319, 89, 23);
+		btnRemove = new JButton("Remove");
+		btnRemove.setBounds(409, 280, 89, 23);
 		contentPane.add(btnRemove);
+
+		back = new JButton("Back");
+		back.setBounds(351, 315, 117, 25);
+		contentPane.add(back);
 	}
+
+	public void addActionListenerToUpdateCustomerBtn(ActionListener listener) {
+		btnUpdate.addActionListener(listener);
+	}
+
+	public void addActionListenerToRemoveCustomerBtn(ActionListener listener) {
+		btnRemove.addActionListener(listener);
+	}
+
+	public void addListSelectionListenerToUpdateCustomerList(
+			ListSelectionListener listener) {
+		jlist.addListSelectionListener(listener);
+	}
+
+	public void addBackButtonListener(ActionListener listener) {
+		back.addActionListener(listener);
+	}
+
+	public JTextField getTextName() {
+		return textName;
+	}
+
+	public void setTextName(JTextField textName) {
+		this.textName = textName;
+	}
+
+	public JTextField getTextSurName() {
+		return textSurName;
+	}
+
+	public void setTextSurName(JTextField textSurName) {
+		this.textSurName = textSurName;
+	}
+
+	public JTextField getTextCredit() {
+		return textCredit;
+	}
+
+	public void setTextCredit(JTextField textCredit) {
+		this.textCredit = textCredit;
+	}
+
+	public JList getJlist() {
+		return jlist;
+	}
+
+	public void setJlist(JList jlist) {
+		this.jlist = jlist;
+	}
+
 }

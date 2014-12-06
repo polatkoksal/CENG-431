@@ -1,24 +1,25 @@
 package com.ebookstore.view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class AdminMenuPanel extends JFrame {
 
+	private static final long serialVersionUID = 9192879402009206960L;
 	private JPanel contentPane;
-	private AddCustomerPanel addCustomer;
-	private AddTitlePanel addTitle;
-	private UpdateOrRemoveCustomer updOrRemove;
-	private UpdateOrRemoveTitle updOrRemoveTitle;
+	private JButton btnAddCustomer;
+	private JButton updateRemoveCustomer;
+	private JButton btnAddTitle;
+	private JButton updateRemoveTitle;
+	private JButton manageOrderItem;
+	private JButton back;
 
 	public AdminMenuPanel() {
 		setTitle("Admin Menu Panel");
@@ -31,59 +32,57 @@ public class AdminMenuPanel extends JFrame {
 
 		JLabel lblMenu = new JLabel("Menu Panel");
 		lblMenu.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblMenu.setBounds(183, 29, 89, 24);
+		lblMenu.setBounds(183, 29, 133, 24);
 		contentPane.add(lblMenu);
 
-		JButton btnAddCustomer = new JButton("Add Customer");
-		btnAddCustomer.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				addCustomer = new AddCustomerPanel();
-				addCustomer.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnAddCustomer = new JButton("Add Customer");
 		btnAddCustomer.setBounds(165, 89, 216, 30);
 		contentPane.add(btnAddCustomer);
 
-		JButton btnNewButton = new JButton("Update  / Remove Customer");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				updOrRemove = new UpdateOrRemoveCustomer();
-				updOrRemove.setVisible(true);
-				setVisible(false);
+		updateRemoveCustomer = new JButton("Update  / Remove Customer");
+		updateRemoveCustomer.setBounds(165, 130, 216, 30);
+		contentPane.add(updateRemoveCustomer);
 
-			}
-		});
-		btnNewButton.setBounds(165, 130, 216, 30);
-		contentPane.add(btnNewButton);
-
-		JButton btnAddTitle = new JButton("Add Title");
-		btnAddTitle.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				addTitle = new AddTitlePanel();
-				addTitle.setVisible(true);
-				setVisible(false);
-			}
-		});
+		btnAddTitle = new JButton("Add Title");
 		btnAddTitle.setBounds(165, 216, 216, 30);
 		contentPane.add(btnAddTitle);
 
-		JButton btnNewButton_2 = new JButton("Update / Remove Title");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		updateRemoveTitle = new JButton("Update / Remove Title");
+		updateRemoveTitle.setBounds(165, 257, 216, 30);
+		contentPane.add(updateRemoveTitle);
 
-			}
-		});
-		btnNewButton_2.setBounds(165, 257, 216, 30);
-		contentPane.add(btnNewButton_2);
+		manageOrderItem = new JButton("Manage Order Item\r\n");
+		manageOrderItem.setBounds(165, 171, 216, 34);
+		contentPane.add(manageOrderItem);
 
-		JButton btnNewButton_1 = new JButton("Manage Order Item\r\n");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_1.setBounds(165, 171, 216, 34);
-		contentPane.add(btnNewButton_1);
+		back = new JButton("Back");
+		back.setBounds(448, 317, 96, 25);
+		contentPane.add(back);
+	}
+
+	public void addActionListenerToAddCustomer(ActionListener listener) {
+		btnAddCustomer.addActionListener(listener);
+	}
+
+	public void addActionListenerToAddTitle(ActionListener listener) {
+		btnAddTitle.addActionListener(listener);
+	}
+
+	public void addActionListenerToUpdateOrRemoveTitle(ActionListener listener) {
+		updateRemoveTitle.addActionListener(listener);
+	}
+
+	public void addActionListenerToUpdateRemoveCustomerBtn(
+			ActionListener listener) {
+		updateRemoveCustomer.addActionListener(listener);
+	}
+
+	public void addActionListenerToManageOrderItemBtn(ActionListener listener) {
+		manageOrderItem.addActionListener(listener);
+	}
+
+	public void addBackButtonListener(ActionListener listener) {
+		back.addActionListener(listener);
 	}
 
 }

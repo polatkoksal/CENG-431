@@ -1,8 +1,6 @@
 package com.ebookstore.view;
 
-import java.awt.EventQueue;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
@@ -13,7 +11,6 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
@@ -21,14 +18,19 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-public class UpdateOrRemoveTitle extends JFrame {
+public class UpdateRemoveTitle extends JFrame {
 
+	private static final long serialVersionUID = 9073683700231800549L;
 	private JPanel contentPane;
 	private JTextField textTitle;
 	private JTextField textPrice;
-	private AdminMenuPanel admMenu;
+	private JButton btnRemove;
+	private JButton btnUpdate;
+	private JList jlist;
+	private JTextArea textArea;
+	private JButton back;
 
-	public UpdateOrRemoveTitle() {
+	public UpdateRemoveTitle() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 604, 533);
 		contentPane = new JPanel();
@@ -41,22 +43,8 @@ public class UpdateOrRemoveTitle extends JFrame {
 		lblUpdateRemove.setBounds(175, 28, 240, 37);
 		contentPane.add(lblUpdateRemove);
 
-		JLabel lblType = new JLabel("Type");
-		lblType.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblType.setBounds(20, 102, 62, 14);
-		contentPane.add(lblType);
-
-		JList jlist = new JList();
+		jlist = new JList();
 		jlist.setBounds(10, 191, 155, 278);
-		jlist.addListSelectionListener(new ListSelectionListener() {
-
-			@Override
-			public void valueChanged(ListSelectionEvent arg0) {
-				// TODO Auto-generated method stub
-
-			}
-		});
-
 		contentPane.add(jlist);
 
 		JLabel lblItemList = new JLabel("Item List");
@@ -89,65 +77,70 @@ public class UpdateOrRemoveTitle extends JFrame {
 		lblDescription.setBounds(265, 307, 82, 14);
 		contentPane.add(lblDescription);
 
-		JTextArea textArea = new JTextArea();
+		textArea = new JTextArea();
 		textArea.setBounds(360, 335, 131, 94);
 		contentPane.add(textArea);
 
-		JButton btnUpdate = new JButton("Update");
-		btnUpdate.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				admMenu = new AdminMenuPanel();
-				admMenu.setVisible(true);
-				setVisible(false);
-
-			}
-		});
+		btnUpdate = new JButton("Update");
 		btnUpdate.setBounds(335, 446, 89, 23);
 		contentPane.add(btnUpdate);
 
-		JButton btnRemove = new JButton("Remove");
-		btnRemove.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				int dialogButton = JOptionPane.YES_NO_OPTION;
-				int result = JOptionPane.showConfirmDialog(null,
-						"Are you sure?", "Warning", dialogButton);
-
-				if (result == JOptionPane.YES_OPTION) {
-					admMenu = new AdminMenuPanel();
-					admMenu.setVisible(true);
-					setVisible(false);
-
-				} else if (result == JOptionPane.NO_OPTION) {
-
-				}
-			}
-		});
+		btnRemove = new JButton("Remove");
 		btnRemove.setBounds(445, 446, 89, 23);
 		contentPane.add(btnRemove);
 
-		final JComboBox comboBox = new JComboBox();
-		comboBox.addItemListener(new ItemListener() {
+		back = new JButton("Back");
+		back.setBounds(240, 446, 89, 23);
+		contentPane.add(back);
+	}
 
-			@Override
-			public void itemStateChanged(ItemEvent arg0) {
-				Integer i = comboBox.getSelectedIndex();
-				if (i == 0) {
-					lblTitle.setText("Author");
-				}
-				if (i == 1) {
-					lblTitle.setText("Kind");
+	public void addActionListenerToUpdateTitleBtn(ActionListener listener) {
+		btnUpdate.addActionListener(listener);
+	}
 
-				}
-				if (i == 2) {
-					lblTitle.setText("Area");
-				}
+	public void addActionListenerToRemoveTitleBtn(ActionListener listener) {
+		btnRemove.addActionListener(listener);
+	}
 
-			}
-		});
-		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Book",
-				"Music CD", "Computer Software" }));
-		comboBox.setBounds(92, 100, 72, 20);
-		contentPane.add(comboBox);
+	public void addListSelectionListenerToUpdateItemList(
+			ListSelectionListener listener) {
+		jlist.addListSelectionListener(listener);
+	}
+
+	public void addBackButtonListener(ActionListener listener) {
+		back.addActionListener(listener);
+	}
+
+	public JTextField getTextTitle() {
+		return textTitle;
+	}
+
+	public void setTextTitle(JTextField textTitle) {
+		this.textTitle = textTitle;
+	}
+
+	public JTextField getTextPrice() {
+		return textPrice;
+	}
+
+	public void setTextPrice(JTextField textPrice) {
+		this.textPrice = textPrice;
+	}
+
+	public JList getJlist() {
+		return jlist;
+	}
+
+	public void setJlist(JList jlist) {
+		this.jlist = jlist;
+	}
+
+	public JTextArea getTextArea() {
+		return textArea;
+	}
+
+	public void setTextArea(JTextArea textArea) {
+		this.textArea = textArea;
 	}
 
 }

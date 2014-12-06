@@ -9,8 +9,7 @@ public class Order {
 	private Title title;
 	private OrderStatus orderStatus;
 
-	public Order(Integer customerId, Title title, OrderStatus orderStatus) {
-		this.customerId = customerId;
+	public Order(Title title, OrderStatus orderStatus) {
 		this.title = title;
 		this.orderStatus = orderStatus;
 	}

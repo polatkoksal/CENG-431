@@ -9,6 +9,7 @@ public class Customer {
 	private String surname;
 	private Integer credit;
 	private ArrayList<Order> orders;
+	private Integer orderIdCount = 1;
 
 	public Customer(String name, String surname, Integer credit) {
 		this.name = name;
@@ -58,8 +59,13 @@ public class Customer {
 	}
 
 	public void addOrder(Order order) {
-		this.orders.add(order);
-		credit -= order.getTitle().getPrice();
+		if (order.getTitle().getPrice() <= credit) {
+			order.setId(orderIdCount);
+			orderIdCount++;
+			order.setCustomerId(id);
+			this.orders.add(order);
+			credit -= order.getTitle().getPrice();
+		}
 	}
 
 }

@@ -1,25 +1,24 @@
 package com.ebookstore.view;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JButton;
-import javax.swing.JTextField;
 import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class CustomerLogin extends JFrame {
 
+	private static final long serialVersionUID = 6159482071555506846L;
 	private JPanel contentPane;
 	private JTextField textCustomerName;
 	private JTextField textCustomerSurname;
-	private JLabel lblSurname ;
-	private CustomerPanel customerPanel;
+	private JLabel lblSurname;
+	private JButton btnLogin;
+	private JButton back;
 
 	public CustomerLogin() {
 		setTitle("Customer Login");
@@ -40,20 +39,13 @@ public class CustomerLogin extends JFrame {
 		lblName.setBounds(21, 98, 61, 29);
 		contentPane.add(lblName);
 
-		 lblSurname = new JLabel("Surname");
+		lblSurname = new JLabel("Surname");
 		lblSurname.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblSurname.setBounds(21, 138, 80, 29);
 		contentPane.add(lblSurname);
 
-		JButton btnLogin = new JButton("Login");
-		btnLogin.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				customerPanel = new CustomerPanel(lblName.getText(), lblSurname.getText());
-				customerPanel.setVisible(true);
-				setVisible(false);
-			}
-		});
-		btnLogin.setBounds(238, 199, 89, 23);
+		btnLogin = new JButton("Login");
+		btnLogin.setBounds(331, 197, 89, 23);
 		contentPane.add(btnLogin);
 
 		textCustomerName = new JTextField();
@@ -65,6 +57,34 @@ public class CustomerLogin extends JFrame {
 		textCustomerSurname.setBounds(121, 143, 86, 20);
 		contentPane.add(textCustomerSurname);
 		textCustomerSurname.setColumns(10);
+
+		back = new JButton("Back");
+		back.setBounds(230, 197, 89, 24);
+		contentPane.add(back);
+	}
+
+	public void addActionListenerToCustomerLoginBtn(ActionListener listener) {
+		btnLogin.addActionListener(listener);
+	}
+
+	public void addBackButtonListener(ActionListener listener) {
+		back.addActionListener(listener);
+	}
+
+	public JTextField getTextCustomerName() {
+		return textCustomerName;
+	}
+
+	public void setTextCustomerName(JTextField textCustomerName) {
+		this.textCustomerName = textCustomerName;
+	}
+
+	public JTextField getTextCustomerSurname() {
+		return textCustomerSurname;
+	}
+
+	public void setTextCustomerSurname(JTextField textCustomerSurname) {
+		this.textCustomerSurname = textCustomerSurname;
 	}
 
 }
