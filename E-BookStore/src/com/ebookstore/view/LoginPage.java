@@ -16,6 +16,7 @@ public class LoginPage extends JFrame {
 
 	private JPanel contentPane;
 	private AdminLoginPage adminLogin;
+	private CustomerLogin customerLogin;
 
 	public LoginPage() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -42,6 +43,13 @@ public class LoginPage extends JFrame {
 		contentPane.add(btnAdmin);
 
 		JButton btnCustomer = new JButton("Customer");
+		btnCustomer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				customerLogin = new CustomerLogin();
+				customerLogin.setVisible(true);
+				setVisible(false);
+			}
+		});
 		btnCustomer.setBounds(179, 207, 89, 23);
 		contentPane.add(btnCustomer);
 	}

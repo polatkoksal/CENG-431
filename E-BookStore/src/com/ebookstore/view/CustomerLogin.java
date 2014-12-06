@@ -49,6 +49,8 @@ public class CustomerLogin extends JFrame {
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				customerPanel = new CustomerPanel(lblName.getText(), lblSurname.getText());
+				customerPanel.setVisible(true);
+				setVisible(false);
 			}
 		});
 		btnLogin.setBounds(238, 199, 89, 23);
