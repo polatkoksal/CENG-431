@@ -30,7 +30,6 @@ public class EBookStore {
 				customerLogin, adminMenuPanel, addCustomerPanel,
 				updateRemoveCustomer, manageOrderItem, addTitlePanel,
 				updateRemoveTitle, customerPanel);
-
 	}
 
 }
