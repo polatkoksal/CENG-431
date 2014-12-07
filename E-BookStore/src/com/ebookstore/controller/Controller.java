@@ -68,16 +68,16 @@ public class Controller {
 	}
 
 	private void init() {
-		Customer c1 = new Customer("ömer", "erkan", 10000);
-		Customer c2 = new Customer("polat", "köksal", 50000);
+		Customer c1 = new Customer("ekincan", "ufuktepe", 50000);
+		Customer c2 = new Customer("polat", "koksal", 50000);
 		addCustomer(c1);
 		addCustomer(c2);
-		Title t1 = new Title("kitap", "kdjgdfhsgsfjhsj", 1000);
-		Title t2 = new Title("armut", "yeniksdjgdf", 500);
+		Title t1 = new Title("Sefiller", "Kitap omer seyfeddin tarafnından yazılmıştır", 50);
+		Title t2 = new Title("Text Editor", "java dilinde kod duzenleyici editore sahiptir", 500);
 		addTitle(t1);
 		addTitle(t2);
 		Order o1 = new Order(t1, OrderStatus.PREPARING);
-		c2.addOrder(o1);
+		c1.addOrder(o1);
 
 	}
 
@@ -540,7 +540,7 @@ public class Controller {
 
 	public Boolean validateAdmin(String name, String surname) {
 		Boolean result = false;
-		if ("".equals(name) && "".equals(surname)) {
+		if ("Admin".equals(name) && "Admin".equals(surname)) {
 			result = true;
 		}
 		return result;
