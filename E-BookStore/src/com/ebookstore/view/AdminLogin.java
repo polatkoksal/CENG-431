@@ -35,20 +35,22 @@ public class AdminLogin extends JFrame {
 		contentPane.add(lblAdminLogin);
 
 		JLabel lblName = new JLabel("Name");
-		lblName.setBounds(44, 115, 57, 32);
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblName.setBounds(44, 115, 89, 32);
 		contentPane.add(lblName);
 
 		JLabel lblSurname = new JLabel("Surname");
-		lblSurname.setBounds(44, 178, 57, 22);
+		lblSurname.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblSurname.setBounds(44, 178, 89, 22);
 		contentPane.add(lblSurname);
 
 		textAdminName = new JTextField();
-		textAdminName.setBounds(111, 121, 86, 20);
+		textAdminName.setBounds(167, 121, 148, 20);
 		contentPane.add(textAdminName);
 		textAdminName.setColumns(10);
 
 		textAdminSurname = new JTextField();
-		textAdminSurname.setBounds(111, 180, 86, 20);
+		textAdminSurname.setBounds(167, 179, 148, 20);
 		contentPane.add(textAdminSurname);
 		textAdminSurname.setColumns(10);
 

@@ -12,6 +12,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.JScrollPane;
 
 public class UpdateRemoveCustomer extends JFrame {
 
@@ -24,6 +25,7 @@ public class UpdateRemoveCustomer extends JFrame {
 	private JButton btnRemove;
 	private JList jlist;
 	private JButton back;
+	private JScrollPane scrollPane;
 
 	public UpdateRemoveCustomer() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,56 +35,67 @@ public class UpdateRemoveCustomer extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		jlist = new JList();
-		jlist.setBounds(10, 84, 205, 283);
-		contentPane.add(jlist);
-
 		JLabel lblUpdateRemove = new JLabel("Update / Remove Customer Panel");
 		lblUpdateRemove.setFont(new Font("Tahoma", Font.BOLD, 15));
-		lblUpdateRemove.setBounds(70, 11, 274, 14);
+		lblUpdateRemove.setBounds(106, 11, 274, 28);
 		contentPane.add(lblUpdateRemove);
 
 		JLabel lblName = new JLabel("Name");
-		lblName.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblName.setBounds(271, 85, 46, 14);
 		contentPane.add(lblName);
 
 		textName = new JTextField();
-		textName.setBounds(368, 82, 86, 20);
+		textName.setBounds(351, 82, 117, 20);
 		contentPane.add(textName);
 		textName.setColumns(10);
 
 		JLabel lblSurname = new JLabel("Surname");
-		lblSurname.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblSurname.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblSurname.setBounds(271, 142, 60, 14);
 		contentPane.add(lblSurname);
 
 		textSurName = new JTextField();
-		textSurName.setBounds(368, 140, 86, 20);
+		textSurName.setBounds(351, 140, 117, 20);
 		contentPane.add(textSurName);
 		textSurName.setColumns(10);
 
 		JLabel lblCredit = new JLabel("Credit");
-		lblCredit.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblCredit.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblCredit.setBounds(271, 208, 46, 14);
 		contentPane.add(lblCredit);
 
 		textCredit = new JTextField();
-		textCredit.setBounds(368, 206, 86, 20);
+		textCredit.setBounds(351, 206, 117, 20);
 		contentPane.add(textCredit);
 		textCredit.setColumns(10);
 
 		btnUpdate = new JButton("Update");
+		btnUpdate.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnUpdate.setBounds(308, 280, 89, 23);
 		contentPane.add(btnUpdate);
 
 		btnRemove = new JButton("Remove");
+		btnRemove.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnRemove.setBounds(409, 280, 89, 23);
 		contentPane.add(btnRemove);
 
 		back = new JButton("Back");
+		back.setFont(new Font("Tahoma", Font.BOLD, 13));
 		back.setBounds(351, 315, 117, 25);
 		contentPane.add(back);
+		
+		JLabel lblNewLabel = new JLabel("Customer List");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel.setBounds(39, 50, 176, 20);
+		contentPane.add(lblNewLabel);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(39, 102, 176, 238);
+		contentPane.add(scrollPane);
+		
+				jlist = new JList();
+				scrollPane.setViewportView(jlist);
 	}
 
 	public void addActionListenerToUpdateCustomerBtn(ActionListener listener) {
@@ -133,5 +146,4 @@ public class UpdateRemoveCustomer extends JFrame {
 	public void setJlist(JList jlist) {
 		this.jlist = jlist;
 	}
-
 }

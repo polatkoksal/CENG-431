@@ -17,6 +17,7 @@ import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
+import javax.swing.JScrollPane;
 
 public class UpdateRemoveTitle extends JFrame {
 
@@ -29,6 +30,8 @@ public class UpdateRemoveTitle extends JFrame {
 	private JList jlist;
 	private JTextArea textArea;
 	private JButton back;
+	private JScrollPane scrollPane;
+	private JScrollPane scrollPane_1;
 
 	public UpdateRemoveTitle() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -43,55 +46,64 @@ public class UpdateRemoveTitle extends JFrame {
 		lblUpdateRemove.setBounds(175, 28, 240, 37);
 		contentPane.add(lblUpdateRemove);
 
-		jlist = new JList();
-		jlist.setBounds(10, 191, 155, 278);
-		contentPane.add(jlist);
-
 		JLabel lblItemList = new JLabel("Item List");
-		lblItemList.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblItemList.setBounds(47, 173, 82, 14);
+		lblItemList.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblItemList.setBounds(57, 110, 107, 23);
 		contentPane.add(lblItemList);
 
 		final JLabel lblTitle = new JLabel("Title");
-		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblTitle.setBounds(265, 192, 62, 14);
+		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblTitle.setBounds(335, 169, 62, 14);
 		contentPane.add(lblTitle);
 
 		textTitle = new JTextField();
-		textTitle.setBounds(360, 189, 86, 20);
+		textTitle.setBounds(427, 167, 101, 20);
 		contentPane.add(textTitle);
 		textTitle.setColumns(10);
 
 		JLabel lblPrice = new JLabel("Price");
-		lblPrice.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblPrice.setBounds(265, 241, 46, 14);
+		lblPrice.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblPrice.setBounds(335, 226, 46, 18);
 		contentPane.add(lblPrice);
 
 		textPrice = new JTextField();
-		textPrice.setBounds(360, 239, 86, 20);
+		textPrice.setBounds(427, 226, 101, 20);
 		contentPane.add(textPrice);
 		textPrice.setColumns(10);
 
 		JLabel lblDescription = new JLabel("Description");
-		lblDescription.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblDescription.setBounds(265, 307, 82, 14);
+		lblDescription.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblDescription.setBounds(335, 312, 82, 14);
 		contentPane.add(lblDescription);
 
-		textArea = new JTextArea();
-		textArea.setBounds(360, 335, 131, 94);
-		contentPane.add(textArea);
-
 		btnUpdate = new JButton("Update");
+		btnUpdate.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnUpdate.setBounds(335, 446, 89, 23);
 		contentPane.add(btnUpdate);
 
 		btnRemove = new JButton("Remove");
+		btnRemove.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnRemove.setBounds(445, 446, 89, 23);
 		contentPane.add(btnRemove);
 
 		back = new JButton("Back");
+		back.setFont(new Font("Tahoma", Font.BOLD, 13));
 		back.setBounds(240, 446, 89, 23);
 		contentPane.add(back);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(42, 142, 170, 305);
+		contentPane.add(scrollPane);
+		
+				jlist = new JList();
+				scrollPane.setViewportView(jlist);
+				
+				scrollPane_1 = new JScrollPane();
+				scrollPane_1.setBounds(427, 323, 124, 94);
+				contentPane.add(scrollPane_1);
+				
+						textArea = new JTextArea();
+						scrollPane_1.setViewportView(textArea);
 	}
 
 	public void addActionListenerToUpdateTitleBtn(ActionListener listener) {

@@ -13,6 +13,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JScrollPane;
 
 public class ManageOrderItem extends JFrame {
 
@@ -23,6 +24,8 @@ public class ManageOrderItem extends JFrame {
 	private JList jCustomlist;
 	private JComboBox comboBox;
 	private JButton back;
+	private JScrollPane scrollPane;
+	private JScrollPane scrollPane_1;
 
 	public ManageOrderItem() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,22 +36,14 @@ public class ManageOrderItem extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel lblCustomerList = new JLabel("Customer List");
-		lblCustomerList.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblCustomerList.setBounds(10, 84, 95, 14);
+		lblCustomerList.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblCustomerList.setBounds(10, 84, 114, 14);
 		contentPane.add(lblCustomerList);
 
 		JLabel lblItemList = new JLabel("Item List");
-		lblItemList.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblItemList.setBounds(432, 85, 95, 14);
+		lblItemList.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblItemList.setBounds(320, 84, 95, 14);
 		contentPane.add(lblItemList);
-
-		jCustomlist = new JList();
-		jCustomlist.setBounds(21, 120, 196, 236);
-		contentPane.add(jCustomlist);
-
-		jItemList = new JList();
-		jItemList.setBounds(340, 120, 204, 236);
-		contentPane.add(jItemList);
 
 		JLabel lblManageOrderItem = new JLabel("Manage Order Item");
 		lblManageOrderItem.setFont(new Font("Tahoma", Font.BOLD, 15));
@@ -56,18 +51,35 @@ public class ManageOrderItem extends JFrame {
 		contentPane.add(lblManageOrderItem);
 
 		comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.BOLD, 11));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] { "PREPARING",
 				"SHIPPED", "DELIVERED" }));
-		comboBox.setBounds(25, 459, 114, 20);
+		comboBox.setBounds(25, 439, 114, 40);
 		contentPane.add(comboBox);
 
 		btnSave = new JButton("Save");
-		btnSave.setBounds(411, 456, 89, 23);
+		btnSave.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnSave.setBounds(411, 449, 89, 30);
 		contentPane.add(btnSave);
 
 		back = new JButton("Back");
-		back.setBounds(328, 456, 81, 23);
+		back.setFont(new Font("Tahoma", Font.BOLD, 11));
+		back.setBounds(320, 449, 89, 30);
 		contentPane.add(back);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 120, 193, 284);
+		contentPane.add(scrollPane);
+		
+				jCustomlist = new JList();
+				scrollPane.setViewportView(jCustomlist);
+				
+				scrollPane_1 = new JScrollPane();
+				scrollPane_1.setBounds(320, 120, 207, 284);
+				contentPane.add(scrollPane_1);
+				
+						jItemList = new JList();
+						scrollPane_1.setViewportView(jItemList);
 	}
 
 	public void addActionListenerToManageSaveBtn(ActionListener listener) {

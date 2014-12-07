@@ -32,11 +32,11 @@ public class LoginPage extends JFrame {
 		contentPane.add(lblLognPage);
 
 		btnAdmin = new JButton("Admin");
-		btnAdmin.setBounds(179, 150, 89, 23);
+		btnAdmin.setBounds(179, 150, 145, 23);
 		contentPane.add(btnAdmin);
 
 		btnCustomer = new JButton("Customer");
-		btnCustomer.setBounds(179, 207, 89, 23);
+		btnCustomer.setBounds(179, 207, 145, 23);
 		contentPane.add(btnCustomer);
 	}
 

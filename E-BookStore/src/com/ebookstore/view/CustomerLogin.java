@@ -23,7 +23,7 @@ public class CustomerLogin extends JFrame {
 	public CustomerLogin() {
 		setTitle("Customer Login");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 469, 332);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -35,30 +35,32 @@ public class CustomerLogin extends JFrame {
 		contentPane.add(lblCustomerLogin);
 
 		final JLabel lblName = new JLabel("Name");
-		lblName.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblName.setBounds(21, 98, 61, 29);
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblName.setBounds(78, 98, 61, 29);
 		contentPane.add(lblName);
 
 		lblSurname = new JLabel("Surname");
-		lblSurname.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblSurname.setBounds(21, 138, 80, 29);
+		lblSurname.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblSurname.setBounds(78, 138, 80, 29);
 		contentPane.add(lblSurname);
 
 		btnLogin = new JButton("Login");
+		btnLogin.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnLogin.setBounds(331, 197, 89, 23);
 		contentPane.add(btnLogin);
 
 		textCustomerName = new JTextField();
-		textCustomerName.setBounds(121, 103, 86, 20);
+		textCustomerName.setBounds(167, 103, 126, 20);
 		contentPane.add(textCustomerName);
 		textCustomerName.setColumns(10);
 
 		textCustomerSurname = new JTextField();
-		textCustomerSurname.setBounds(121, 143, 86, 20);
+		textCustomerSurname.setBounds(167, 143, 126, 20);
 		contentPane.add(textCustomerSurname);
 		textCustomerSurname.setColumns(10);
 
 		back = new JButton("Back");
+		back.setFont(new Font("Tahoma", Font.BOLD, 13));
 		back.setBounds(230, 197, 89, 24);
 		contentPane.add(back);
 	}

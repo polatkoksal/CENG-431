@@ -34,37 +34,42 @@ public class AddCustomerPanel extends JFrame {
 		contentPane.add(lblAddCustomerPanel);
 
 		JLabel lblName = new JLabel("Name");
-		lblName.setBounds(36, 104, 86, 14);
+		lblName.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblName.setBounds(36, 104, 118, 14);
 		contentPane.add(lblName);
 
 		JLabel lblSurname = new JLabel("Surname");
-		lblSurname.setBounds(36, 153, 86, 14);
+		lblSurname.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblSurname.setBounds(36, 153, 118, 14);
 		contentPane.add(lblSurname);
 
 		textUsrName = new JTextField();
-		textUsrName.setBounds(141, 101, 86, 20);
+		textUsrName.setBounds(164, 101, 114, 20);
 		contentPane.add(textUsrName);
 		textUsrName.setColumns(10);
 
 		textUsrSurname = new JTextField();
-		textUsrSurname.setBounds(141, 150, 86, 20);
+		textUsrSurname.setBounds(164, 150, 114, 20);
 		contentPane.add(textUsrSurname);
 		textUsrSurname.setColumns(10);
 
 		btnSave = new JButton("Save");
+		btnSave.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnSave.setBounds(333, 265, 89, 23);
 		contentPane.add(btnSave);
 
 		JLabel lblCustomerCredit = new JLabel("Customer Credit");
-		lblCustomerCredit.setBounds(36, 201, 95, 14);
+		lblCustomerCredit.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblCustomerCredit.setBounds(36, 201, 118, 14);
 		contentPane.add(lblCustomerCredit);
 
 		textUsrCredit = new JTextField();
-		textUsrCredit.setBounds(141, 198, 86, 20);
+		textUsrCredit.setBounds(164, 198, 114, 20);
 		contentPane.add(textUsrCredit);
 		textUsrCredit.setColumns(10);
 
 		back = new JButton("Back");
+		back.setFont(new Font("Tahoma", Font.BOLD, 11));
 		back.setBounds(235, 264, 86, 24);
 		contentPane.add(back);
 	}

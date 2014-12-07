@@ -36,27 +36,33 @@ public class AdminMenuPanel extends JFrame {
 		contentPane.add(lblMenu);
 
 		btnAddCustomer = new JButton("Add Customer");
-		btnAddCustomer.setBounds(165, 89, 216, 30);
+		btnAddCustomer.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnAddCustomer.setBounds(165, 89, 216, 34);
 		contentPane.add(btnAddCustomer);
 
 		updateRemoveCustomer = new JButton("Update  / Remove Customer");
-		updateRemoveCustomer.setBounds(165, 130, 216, 30);
+		updateRemoveCustomer.setFont(new Font("Tahoma", Font.BOLD, 11));
+		updateRemoveCustomer.setBounds(165, 130, 216, 34);
 		contentPane.add(updateRemoveCustomer);
 
 		btnAddTitle = new JButton("Add Title");
-		btnAddTitle.setBounds(165, 216, 216, 30);
+		btnAddTitle.setFont(new Font("Tahoma", Font.BOLD, 11));
+		btnAddTitle.setBounds(165, 216, 216, 34);
 		contentPane.add(btnAddTitle);
 
 		updateRemoveTitle = new JButton("Update / Remove Title");
-		updateRemoveTitle.setBounds(165, 257, 216, 30);
+		updateRemoveTitle.setFont(new Font("Tahoma", Font.BOLD, 11));
+		updateRemoveTitle.setBounds(165, 257, 216, 34);
 		contentPane.add(updateRemoveTitle);
 
 		manageOrderItem = new JButton("Manage Order Item\r\n");
+		manageOrderItem.setFont(new Font("Tahoma", Font.BOLD, 11));
 		manageOrderItem.setBounds(165, 171, 216, 34);
 		contentPane.add(manageOrderItem);
 
 		back = new JButton("Back");
-		back.setBounds(448, 317, 96, 25);
+		back.setFont(new Font("Tahoma", Font.BOLD, 11));
+		back.setBounds(432, 317, 112, 34);
 		contentPane.add(back);
 	}
 

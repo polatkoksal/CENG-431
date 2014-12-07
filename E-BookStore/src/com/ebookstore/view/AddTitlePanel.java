@@ -14,6 +14,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
 
 public class AddTitlePanel extends JFrame {
 
@@ -26,6 +27,7 @@ public class AddTitlePanel extends JFrame {
 	private JTextArea textArea;
 	private JTextField mainTitle;
 	private JButton back;
+	private JScrollPane scrollPane;
 
 	public AddTitlePanel() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,18 +43,18 @@ public class AddTitlePanel extends JFrame {
 		contentPane.add(lblAddTitle);
 
 		JLabel lblType = new JLabel("Type");
-		lblType.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblType.setBounds(73, 104, 46, 14);
+		lblType.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblType.setBounds(73, 104, 46, 29);
 		contentPane.add(lblType);
 
 		final JLabel lblTitle = new JLabel("Author");
-		lblTitle.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblTitle.setBounds(73, 214, 46, 14);
+		lblTitle.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblTitle.setBounds(73, 214, 70, 14);
 		contentPane.add(lblTitle);
 
 		JLabel lblPrice = new JLabel("Price");
-		lblPrice.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblPrice.setBounds(73, 246, 46, 14);
+		lblPrice.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblPrice.setBounds(73, 246, 70, 14);
 		contentPane.add(lblPrice);
 
 		comboBoxType = new JComboBox();
@@ -73,29 +75,26 @@ public class AddTitlePanel extends JFrame {
 				}
 			}
 		});
-		comboBoxType.setBounds(175, 102, 87, 20);
+		comboBoxType.setBounds(175, 102, 87, 31);
 		contentPane.add(comboBoxType);
 
 		textTitle = new JTextField();
-		textTitle.setBounds(176, 212, 86, 20);
+		textTitle.setBounds(176, 212, 113, 20);
 		contentPane.add(textTitle);
 		textTitle.setColumns(10);
 
 		textTitlePrice = new JTextField();
-		textTitlePrice.setBounds(176, 244, 86, 20);
+		textTitlePrice.setBounds(176, 244, 113, 20);
 		contentPane.add(textTitlePrice);
 		textTitlePrice.setColumns(10);
 
 		JLabel lblDescription = new JLabel("Description");
-		lblDescription.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		lblDescription.setFont(new Font("Tahoma", Font.BOLD, 13));
 		lblDescription.setBounds(73, 320, 76, 14);
 		contentPane.add(lblDescription);
 
-		textArea = new JTextArea();
-		textArea.setBounds(176, 321, 195, 146);
-		contentPane.add(textArea);
-
 		btnSave = new JButton("Save");
+		btnSave.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnSave.setBounds(395, 486, 89, 23);
 		contentPane.add(btnSave);
 
@@ -105,12 +104,21 @@ public class AddTitlePanel extends JFrame {
 		mainTitle.setColumns(10);
 
 		JLabel lblTitle_1 = new JLabel("Title");
-		lblTitle_1.setBounds(62, 157, 70, 15);
+		lblTitle_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblTitle_1.setBounds(73, 158, 70, 15);
 		contentPane.add(lblTitle_1);
 
 		back = new JButton("Back");
-		back.setBounds(296, 485, 87, 20);
+		back.setFont(new Font("Tahoma", Font.BOLD, 13));
+		back.setBounds(296, 485, 87, 24);
 		contentPane.add(back);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(175, 341, 142, 113);
+		contentPane.add(scrollPane);
+		
+				textArea = new JTextArea();
+				scrollPane.setViewportView(textArea);
 	}
 
 	public void addActionListenerToSaveTitleBtn(ActionListener listener) {
